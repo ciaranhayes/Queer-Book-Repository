@@ -15,17 +15,16 @@ nav{
     background-color: #7E5B6D;
     border-radius: 10px;
     font-weight: 500;
-}
 
-
-a.login {
-    float: right;
-    margin-right: 2rem;
 }
 
 .navbar a:hover {
     background-color: #FBFBFB;
     color: #1F253F;
+}
+
+li.nav-item {
+    margin-right: 0.5rem;
 }
 
 .active {
