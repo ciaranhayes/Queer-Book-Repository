@@ -31,3 +31,41 @@ li.nav-item {
     background-color: #1F253F;
     color: #FBFBFB
 }
+
+.hero {
+    background-color: #7D7BB2;
+    border-radius: 15px;
+}
+
+.hero-text {
+    padding: 4.5rem;
+    padding-bottom: 1rem;
+    color: #FBFBFB;
+}
+
+.hero-paragraph {
+    color: #FBFBFB;
+    padding-left: 4.5rem;
+    padding-bottom: 4.5rem;
+}
+
+#hero {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+#featuredbooks {
+    background-color: #1F253F;
+    padding-top: 2rem;
+}
+
+.featured {
+    color:#1F253F;
+    background-color: #FBFBFB;
+    padding: 0.5em;
+    border-radius: 15px;
+    max-width: fit-content;
+    margin-top: 1rem;
+    font-size: large;
+    margin-left: 4.5rem;
+}
