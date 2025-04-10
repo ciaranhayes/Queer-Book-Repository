@@ -4,10 +4,10 @@ async function retrieveBook(id: string) {
     const response = await fetch(url);
 
     const data = await response.json();
-    const title = data.title;
-    const author = data.author;
-    const genres = JSON.stringify(data.genres.join(', '));
-    const description = data.short_description;
+    const title:string = data.title;
+    const author:string = data.author;
+    const genres:string = data.genres.join(', ');
+    const description:string = data.short_description;
 
     const htmlFeaturedBook = `
     <div class="card mb-5" style="max-width:300px; min-width:200px">
@@ -25,6 +25,6 @@ async function retrieveBook(id: string) {
 }
 
 retrieveBook('67e6e780f3ee5d721bcbd75e');
-retrieveBook('67e6e780f3ee5d721bcbd75e');
-retrieveBook('67e6e780f3ee5d721bcbd75e');
-retrieveBook('67e6e780f3ee5d721bcbd75e');
+retrieveBook('67e6e780f3ee5d721bcbd766');
+retrieveBook('67e6e780f3ee5d721bcbd762');
+retrieveBook('67e6e780f3ee5d721bcbd770');

@@ -15,7 +15,7 @@ function retrieveBook(id) {
         const data = yield response.json();
         const title = data.title;
         const author = data.author;
-        const genres = JSON.stringify(data.genres.join(', '));
+        const genres = data.genres.join(', ');
         const description = data.short_description;
         const htmlFeaturedBook = `
     <div class="card mb-5" style="max-width:300px; min-width:200px">
@@ -32,6 +32,6 @@ function retrieveBook(id) {
     });
 }
 retrieveBook('67e6e780f3ee5d721bcbd75e');
-retrieveBook('67e6e780f3ee5d721bcbd75e');
-retrieveBook('67e6e780f3ee5d721bcbd75e');
-retrieveBook('67e6e780f3ee5d721bcbd75e');
+retrieveBook('67e6e780f3ee5d721bcbd766');
+retrieveBook('67e6e780f3ee5d721bcbd762');
+retrieveBook('67e6e780f3ee5d721bcbd770');
