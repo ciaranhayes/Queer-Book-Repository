@@ -10,16 +10,21 @@ async function retrieveBook(id: string) {
     const description = data.short_description;
 
     const htmlFeaturedBook = `
-    <div class="container feature p-3">
-        <h2>${title}</h2>
-        <p>${author}</p>
-        <p>${description}</p>
-        <p>${genres}</p>
-    </div>
-    `
+    <div class="card mb-5" style="max-width:300px; min-width:200px">
+        <div class="card-header">
+            <h2>${title}</h2>
+            <p style="font-style:italic;">${author}</p>
+        </div>
+        <div class="card-body">
+            <p>${description}</p>
+        </div>
+        <div class="card-footer">${genres}</div>
+    </div>`
 
-    $('#featured').html(htmlFeaturedBook);
+    $('#featured').append(htmlFeaturedBook);
 }
 
 retrieveBook('67e6e780f3ee5d721bcbd75e');
-
+retrieveBook('67e6e780f3ee5d721bcbd75e');
+retrieveBook('67e6e780f3ee5d721bcbd75e');
+retrieveBook('67e6e780f3ee5d721bcbd75e');
