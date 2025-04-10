@@ -8,6 +8,13 @@ const path_1 = __importDefault(require("path"));
 const app = (0, express_1.default)();
 const port = 3000;
 app.use(express_1.default.static(path_1.default.join(__dirname, 'public')));
+app.use(express_1.default.static('build', {
+    setHeaders: (res, path) => {
+        if (path.endsWith('.js')) {
+            res.set('Content-Type', 'application/javascript');
+        }
+    }
+}));
 app.get('/', (req, res) => {
     res.sendFile(path_1.default.join(__dirname, 'public', 'index.html'));
 });
