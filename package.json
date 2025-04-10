@@ -1,7 +1,7 @@
 {
   "name": "queerbookarchive",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "build/router.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "tsc && node build/router.js"
@@ -10,9 +10,12 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "-": "^0.0.1",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
-    "jquery": "^3.7.1"
+    "g": "^2.0.1",
+    "jquery": "^3.7.1",
+    "nodemon": "^3.1.9"
   },
   "devDependencies": {
     "@types/express": "^5.0.1",

@@ -20,12 +20,10 @@ app.get('/genre', (req, res) => {
 app.get('/library', (req, res) => {
     res.sendFile(path_1.default.join(__dirname, 'public', 'library.html'));
 });
-app.get('/genre', (req, res) => {
-    res.sendFile(path_1.default.join(__dirname, 'public', 'genre.html'));
-});
 app.get('/contribute', (req, res) => {
     res.sendFile(path_1.default.join(__dirname, 'public', 'contribute.html'));
 });
 app.listen(port, () => {
-    console.log(`Listening on port: ${port}`);
+    console.log(`Listening on port: http://localhost:${port}`);
 });
+console.log(path_1.default.join(__dirname, 'public'));
