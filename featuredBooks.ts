@@ -4,24 +4,22 @@ async function retrieveBook(id: string) {
     const response = await fetch(url);
 
     const data = await response.json();
-
     const title = data.title;
     const author = data.author;
     const genres = JSON.stringify(data.genres.join(', '));
     const description = data.short_description;
 
     const htmlFeaturedBook = `
-    <div class="container">
+    <div class="container feature p-3">
         <h2>${title}</h2>
         <p>${author}</p>
         <p>${description}</p>
         <p>${genres}</p>
     </div>
     `
-    
+
     $('#featured').html(htmlFeaturedBook);
-    console.log();
-    
 }
 
 retrieveBook('67e6e780f3ee5d721bcbd75e');
+

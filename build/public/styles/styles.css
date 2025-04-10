@@ -2,6 +2,7 @@ body {
     margin: 0px;
     background-color: #FBFBFB;
     font-family: Arial, Helvetica, sans-serif;
+    height: auto;
 }
 
 nav{
@@ -61,4 +62,10 @@ footer {
     padding-top: 1rem;
     text-align: center;
     color:#FBFBFB;
+}
+
+.feature {
+    color: #1F253F;
+    background-color: #FBFBFB;
+    border-radius: 15px;
 }

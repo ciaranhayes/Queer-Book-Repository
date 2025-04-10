@@ -18,7 +18,7 @@ function retrieveBook(id) {
         const genres = JSON.stringify(data.genres.join(', '));
         const description = data.short_description;
         const htmlFeaturedBook = `
-    <div class="container">
+    <div class="container feature p-3">
         <h2>${title}</h2>
         <p>${author}</p>
         <p>${description}</p>
@@ -26,7 +26,6 @@ function retrieveBook(id) {
     </div>
     `;
         $('#featured').html(htmlFeaturedBook);
-        console.log();
     });
 }
 retrieveBook('67e6e780f3ee5d721bcbd75e');
