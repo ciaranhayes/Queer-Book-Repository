@@ -13,12 +13,14 @@ function fetchBooks() {
         const url = "https://queer-books-api.onrender.com/books";
         const response = yield fetch(url);
         const data = yield response.json();
-        data.forEach((element) => {
-            const title = element.title;
-            const author = element.author;
-            const genres = element.genres.join(', ');
-            const description = element.short_description;
-            const length = element.page_length;
+        // data.forEach((element: any) => {
+        //     const title:string = element.title;
+        //     const author:string = element.author;
+        //     const genres:string = element.genres.join(', ');
+        //     const description:string = element.short_description;
+        //     const length: number = element.page_length;
+        data.forEach((book) => {
+            const { title, author, genres, short_description, page_length } = book;
             const htmlFeaturedBook = `
         <div class="card mb-5" style="max-width:300px; min-width:200px">
             <div class="card-header">
@@ -26,8 +28,8 @@ function fetchBooks() {
                 <p style="font-style:italic;">${author}</p>
             </div>
             <div class="card-body">
-                <p>${description}</p>
-                <p>${length} pages</p>
+                <p>${short_description}</p>
+                <p>${page_length} pages</p>
             </div>
             <div class="card-footer">${genres}</div>
         </div>`;
