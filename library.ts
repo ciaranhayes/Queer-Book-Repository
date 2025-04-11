@@ -13,7 +13,7 @@ async function fetchBooks() {
 
     const data = await response.json();
     
-    data.forEach((book: any) => {
+    data.forEach((book: Book) => {
         const { title, author, genres, short_description, page_length } = book;
 
         const htmlFeaturedBook = `
@@ -26,7 +26,7 @@ async function fetchBooks() {
                 <p>${short_description}</p>
                 <p>${page_length} pages</p>
             </div>
-            <div class="card-footer">${genres}</div>
+            <div class="card-footer">${genres.join(", ")}</div>
         </div>`
 
         $('#featured').append(htmlFeaturedBook);

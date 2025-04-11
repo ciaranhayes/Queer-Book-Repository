@@ -8,27 +8,30 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-function fetchBooks() {
+function discoverBooks() {
     return __awaiter(this, void 0, void 0, function* () {
-        const url = "https://queer-books-api.onrender.com/books";
+        const url = "https://queer-books-api.onrender.com/recommendation";
         const response = yield fetch(url);
         const data = yield response.json();
-        data.forEach((book) => {
-            const { title, author, genres, short_description, page_length } = book;
-            const htmlFeaturedBook = `
-        <div class="card mb-5" style="max-width:300px; min-width:200px">
-            <div class="card-header">
-                <h2>${title}</h2>
-                <p style="font-style:italic;">${author}</p>
-            </div>
-            <div class="card-body">
-                <p>${short_description}</p>
-                <p>${page_length} pages</p>
-            </div>
-            <div class="card-footer">${genres.join(", ")}</div>
-        </div>`;
-            $('#featured').append(htmlFeaturedBook);
-        });
+        console.log(data);
+        const title = data[0].title;
+        const author = data[0].author;
+        const genres = data[0].genres.join(', ');
+        const description = data[0].short_description;
+        const length = data[0].page_length;
+        const htmlFeaturedBook = `
+    <div class="card mb-5" style="max-width:300px; min-width:200px">
+        <div class="card-header">
+            <h2>${title}</h2>
+            <p style="font-style:italic;">${author}</p>
+        </div>
+        <div class="card-body">
+            <p>${description}</p>
+            <p>${length} pages</p>
+        </div>
+        <div class="card-footer">${genres}</div>
+    </div>`;
+        $('#discover').html(htmlFeaturedBook);
     });
 }
-fetchBooks();
+discoverBooks();

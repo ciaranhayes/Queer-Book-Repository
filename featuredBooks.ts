@@ -4,6 +4,7 @@ async function retrieveBook(id: string) {
     const response = await fetch(url);
 
     const data = await response.json();
+    
     const title:string = data.title;
     const author:string = data.author;
     const genres:string = data.genres.join(', ');
