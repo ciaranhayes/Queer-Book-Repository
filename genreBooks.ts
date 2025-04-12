@@ -6,19 +6,19 @@ interface Book {
     page_length: number;
 }
 
-async function fetchBooks() {
-    const url: string = "https://queer-books-api.onrender.com/books";
+async function getGenreBook(genre: string) {
+    const url = `https://queer-books-api.onrender.com/books/genre/${genre}`
 
     const response = await fetch(url);
 
     const data = await response.json();
-    
+
+    console.log(data);
+
     data.forEach((book: Book) => {
         const { title, author, genres, short_description, page_length } = book;
 
-        console.log(data.genres);
-
-        const htmlFeaturedBook = `
+    const htmlGenreBook = `
         <div class="card mb-5" style="max-width:300px; min-width:200px">
             <div class="card-header">
                 <h2>${title}</h2>
@@ -31,8 +31,9 @@ async function fetchBooks() {
             <div class="card-footer">${genres.join(", ")}</div>
         </div>`
 
-        $('#featured').append(htmlFeaturedBook);
+        $('#genres').append(htmlGenreBook);
     });
+    
 }
 
-fetchBooks();
+getGenreBook('Romance');

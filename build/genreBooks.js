@@ -8,15 +8,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-function fetchBooks() {
+function getGenreBook(genre) {
     return __awaiter(this, void 0, void 0, function* () {
-        const url = "https://queer-books-api.onrender.com/books";
+        const url = `https://queer-books-api.onrender.com/books/genre/${genre}`;
         const response = yield fetch(url);
         const data = yield response.json();
+        console.log(data);
         data.forEach((book) => {
             const { title, author, genres, short_description, page_length } = book;
-            console.log(data.genres);
-            const htmlFeaturedBook = `
+            const htmlGenreBook = `
         <div class="card mb-5" style="max-width:300px; min-width:200px">
             <div class="card-header">
                 <h2>${title}</h2>
@@ -28,8 +28,8 @@ function fetchBooks() {
             </div>
             <div class="card-footer">${genres.join(", ")}</div>
         </div>`;
-            $('#featured').append(htmlFeaturedBook);
+            $('#genres').append(htmlGenreBook);
         });
     });
 }
-fetchBooks();
+getGenreBook('Romance');
