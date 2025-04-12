@@ -31,7 +31,7 @@ function retrieveBook(id) {
         $('#featured').append(htmlFeaturedBook);
     });
 }
-retrieveBook('67e6e780f3ee5d721bcbd75e');
-retrieveBook('67e6e780f3ee5d721bcbd766');
-retrieveBook('67e6e780f3ee5d721bcbd762');
-retrieveBook('67e6e780f3ee5d721bcbd770');
+$(retrieveBook('67e6e780f3ee5d721bcbd75e'));
+$(retrieveBook('67e6e780f3ee5d721bcbd766'));
+$(retrieveBook('67e6e780f3ee5d721bcbd762'));
+$(retrieveBook('67e6e780f3ee5d721bcbd770'));

@@ -36,4 +36,4 @@ async function getGenreBook(genre: string) {
     
 }
 
-getGenreBook('Romance');
+$( getGenreBook('Romance') )

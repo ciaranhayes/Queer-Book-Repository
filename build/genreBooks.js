@@ -32,4 +32,4 @@ function getGenreBook(genre) {
         });
     });
 }
-getGenreBook('Romance');
+$(getGenreBook('Romance'));

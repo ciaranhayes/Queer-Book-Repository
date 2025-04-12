@@ -34,4 +34,4 @@ function discoverBooks() {
         $('#discover').html(htmlFeaturedBook);
     });
 }
-discoverBooks();
+$(discoverBooks());

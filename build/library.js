@@ -15,7 +15,6 @@ function fetchBooks() {
         const data = yield response.json();
         data.forEach((book) => {
             const { title, author, genres, short_description, page_length } = book;
-            console.log(data.genres);
             const htmlFeaturedBook = `
         <div class="card mb-5" style="max-width:300px; min-width:200px">
             <div class="card-header">
@@ -32,4 +31,4 @@ function fetchBooks() {
         });
     });
 }
-fetchBooks();
+$(fetchBooks());

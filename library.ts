@@ -16,8 +16,6 @@ async function fetchBooks() {
     data.forEach((book: Book) => {
         const { title, author, genres, short_description, page_length } = book;
 
-        console.log(data.genres);
-
         const htmlFeaturedBook = `
         <div class="card mb-5" style="max-width:300px; min-width:200px">
             <div class="card-header">
@@ -35,4 +33,4 @@ async function fetchBooks() {
     });
 }
 
-fetchBooks();
+$( fetchBooks() )
