@@ -14,7 +14,7 @@ function getGenreBook(genre, section) {
         const response = yield fetch(url);
         const data = yield response.json();
         console.log(data);
-        const newSection = `<section id="${section}" class="container-fluid pt-2 pb-2 mb-5p"></section>`;
+        const newSection = `<section id="${section}" class="container-fluid pt-2 pb-2 mb-5" style="background-color:#1F253F;"></section>`;
         const htmlGenreTitle = `<h2 class="featured p-2 rounded-3 mt-3 mx-auto">${genre}</h2>`;
         const bookContainingDiv = `<div class="${section} container mt-4 mb-4 d-flex flex-row justify-content-around flex-wrap"></div>`;
         $('#genre-hold').prepend(newSection);
@@ -40,3 +40,23 @@ function getGenreBook(genre, section) {
 }
 $(getGenreBook('Romance', 'romance'));
 $(getGenreBook('Coming of Age', 'coming-of-age'));
+$(getGenreBook('Literary Fiction', 'literary-fiction'));
+$(getGenreBook('Fantasy', 'fantasy'));
+$(getGenreBook('Young Adult', 'young-adult'));
+$(getGenreBook('Contemporary', 'contemporary'));
+$(getGenreBook('Adventure', 'adventure'));
+$(getGenreBook('Lesbian Fiction', 'lesbian-fiction'));
+$(getGenreBook('LGBTQIA+', 'lgbtqia'));
+$(getGenreBook('Historical Fiction', 'historical-fiction'));
+$(getGenreBook('Graphic Novel', 'graphic-novel'));
+$(getGenreBook('Memoir', 'memoir'));
+$(getGenreBook('Transgender', 'transgender'));
+$(getGenreBook('Non-fiction', 'non-fiction'));
+$(getGenreBook('Gothic Fiction', 'gothic-fiction'));
+$(getGenreBook('Philosophy', 'philosophy'));
+$(getGenreBook('Thriller', 'thriller'));
+$(getGenreBook('Mystery', 'mystery'));
+$(getGenreBook('Comedy', 'comedy'));
+$(getGenreBook('Poetry', 'poetry'));
+$(getGenreBook('Science Fiction', 'science-fiction'));
+$(getGenreBook('Horror', 'horror'));
