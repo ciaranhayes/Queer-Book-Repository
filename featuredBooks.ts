@@ -1,4 +1,4 @@
-async function retrieveBook(id: string) {
+async function retrieveBook(id: string): Promise<void> {
     const url = `https://queer-books-api.onrender.com/books/${id}`
 
     const response = await fetch(url);

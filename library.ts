@@ -6,7 +6,7 @@ interface Book {
     page_length: number;
 }
 
-async function fetchBooks() {
+async function fetchBooks(): Promise <void> {
     const url: string = "https://queer-books-api.onrender.com/books";
 
     const response = await fetch(url);

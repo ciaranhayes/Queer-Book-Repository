@@ -1,4 +1,4 @@
-async function discoverBooks() {
+async function discoverBooks(): Promise<void> {
     const url:string = "https://queer-books-api.onrender.com/recommendation";
 
     const response = await fetch(url);

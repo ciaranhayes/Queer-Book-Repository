@@ -8,21 +8,21 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-function getGenreBook(genre, section) {
+function getGenreBook(genre, section, order) {
     return __awaiter(this, void 0, void 0, function* () {
         const url = `https://queer-books-api.onrender.com/books/genre/${genre}`;
         const response = yield fetch(url);
-        const data = yield response.json();
-        console.log(data);
-        const newSection = `<section id="${section}" class="container-fluid pt-2 pb-2 mb-5" style="background-color:#1F253F;"></section>`;
+        var data = yield response.json();
+        const newSection = `<div id="${section}" class="${order} container-fluid pt-2 pb-2 mb-5" style="background-color:#1F253F;"></div>`;
         const htmlGenreTitle = `<h2 class="featured p-2 rounded-3 mt-3 mx-auto">${genre}</h2>`;
         const bookContainingDiv = `<div class="${section} container mt-4 mb-4 d-flex flex-row justify-content-around flex-wrap"></div>`;
-        $('#genre-hold').prepend(newSection);
+        $('#genre-hold').append(newSection);
+        $(`#${section}`).append(htmlGenreTitle);
         $(`#${section}`).append(bookContainingDiv);
         data.forEach((book) => {
             const { title, author, genres, short_description, page_length } = book;
             const htmlGenreBook = `
-        <div id="${section}" class="card mb-5" style="max-width:300px; min-width:200px order-2">
+        <div class="card mb-5" style="max-width:300px; min-width:200px order-2">
             <div class="card-header">
                 <h2>${title}</h2>
                 <p style="font-style:italic;">${author}</p>
@@ -35,28 +35,27 @@ function getGenreBook(genre, section) {
         </div>`;
             $(`.${section}`).append(htmlGenreBook);
         });
-        $(`#${section}`).prepend(htmlGenreTitle);
     });
 }
-$(getGenreBook('Romance', 'romance'));
-$(getGenreBook('Coming of Age', 'coming-of-age'));
-$(getGenreBook('Literary Fiction', 'literary-fiction'));
-$(getGenreBook('Fantasy', 'fantasy'));
-$(getGenreBook('Young Adult', 'young-adult'));
-$(getGenreBook('Contemporary', 'contemporary'));
-$(getGenreBook('Adventure', 'adventure'));
-$(getGenreBook('Lesbian Fiction', 'lesbian-fiction'));
-$(getGenreBook('LGBTQIA+', 'lgbtqia'));
-$(getGenreBook('Historical Fiction', 'historical-fiction'));
-$(getGenreBook('Graphic Novel', 'graphic-novel'));
-$(getGenreBook('Memoir', 'memoir'));
-$(getGenreBook('Transgender', 'transgender'));
-$(getGenreBook('Non-fiction', 'non-fiction'));
-$(getGenreBook('Gothic Fiction', 'gothic-fiction'));
-$(getGenreBook('Philosophy', 'philosophy'));
-$(getGenreBook('Thriller', 'thriller'));
-$(getGenreBook('Mystery', 'mystery'));
-$(getGenreBook('Comedy', 'comedy'));
-$(getGenreBook('Poetry', 'poetry'));
-$(getGenreBook('Science Fiction', 'science-fiction'));
-$(getGenreBook('Horror', 'horror'));
+$(getGenreBook('Romance', 'romance', 'oder-1'));
+$(getGenreBook('Coming of Age', 'coming-of-age', 'oder-2'));
+$(getGenreBook('Literary Fiction', 'literary-fiction', 'oder-3'));
+$(getGenreBook('Fantasy', 'fantasy', 'oder-4'));
+$(getGenreBook('Young Adult', 'young-adult', 'oder-5'));
+$(getGenreBook('Contemporary', 'contemporary', 'oder-6'));
+$(getGenreBook('Adventure', 'adventure', 'oder-7'));
+$(getGenreBook('Lesbian Fiction', 'lesbian-fiction', 'oder-8'));
+$(getGenreBook('LGBTQIA+', 'lgbtqia', 'oder-9'));
+$(getGenreBook('Historical Fiction', 'historical-fiction', 'oder-10'));
+$(getGenreBook('Graphic Novel', 'graphic-novel', 'oder-11'));
+$(getGenreBook('Memoir', 'memoir', 'oder-12'));
+$(getGenreBook('Transgender', 'transgender', 'oder-13'));
+$(getGenreBook('Non-fiction', 'non-fiction', 'oder-14'));
+$(getGenreBook('Gothic Fiction', 'gothic-fiction', 'oder-15'));
+$(getGenreBook('Philosophy', 'philosophy', 'oder-16'));
+$(getGenreBook('Thriller', 'thriller', 'oder-17'));
+$(getGenreBook('Mystery', 'mystery', 'oder-18'));
+$(getGenreBook('Comedy', 'comedy', 'oder-19'));
+$(getGenreBook('Poetry', 'poetry', 'oder-20'));
+$(getGenreBook('Science Fiction', 'science-fiction', 'oder-21'));
+$(getGenreBook('Horror', 'horror', 'oder-22'));
