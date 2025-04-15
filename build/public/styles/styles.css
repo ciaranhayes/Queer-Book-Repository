@@ -69,3 +69,9 @@ footer {
     background-color: #FBFBFB;
     border-radius: 15px;
 }
+
+#toggleMenuGenre {
+    background-color: #7D7BB2;
+    color: #FBFBFB;
+    border: 0px;
+}
