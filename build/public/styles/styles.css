@@ -41,7 +41,7 @@ li.nav-item {
     color:#FBFBFB
 }
 
-#featured-books {
+#featured-books, #discovered-books {
     background-color: #1F253F;
 }
 
@@ -74,4 +74,22 @@ footer {
     background-color: #7D7BB2;
     color: #FBFBFB;
     border: 0px;
+}
+
+.discoverNewBook {
+    color:#1F253F;
+}
+
+.rounded {
+    border-top: 4px solid #7E5B6D;
+    border-radius: 5px;
+}
+
+.w-max-content {
+    max-width: min-content;
+  }
+
+#recommendationButton {
+    color:#1F253F;
+    background-color:#FBFBFB;
 }

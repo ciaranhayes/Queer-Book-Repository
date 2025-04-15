@@ -47,13 +47,21 @@
         </div>
       </nav>
 
-      <section class="container-fluid">
-        <h1>Content for discovery here</h1>
+      <section id="discoverNewBook" class="container-fluid my-5">
+        <div class="shadow container w-7 discoverNewBook rounded-3">
+            <h1 class="p-5 discoverNewBook hero-text">Looking to discover something new?</h1>
+            <p class="ps-5 discoverNewBook pb-5 hero-text">Try our recommendation feature, click the button and get yourself a randomly selected book from the
+              database</p>
+        </div>
       </section>
 
-      <section id="featured-books" class="container-fluid pt-2 pb-2 mb-5">
-        <h2 class="featured p-2 rounded-3 mt-3 mx-auto">Get A Random Recommendation</h2>
-        <div class="container" id="discover"></div>
+      <hr class="rounded mb-4 w-75 mx-auto">
+
+      <section id="discovered-books" class="row pt-3 pb-3 mb-5">
+        <div class="col-sm-6 mb-3 d-flex justify-content-center align-items-center mt-5">
+          <button id="recommendationButton" type="button" class="btn featured p-2 rounded-3 my-auto">Get Recommendation</button>
+        </div>
+        <div class="col-sm-6 d-flex justify-content-center align-items-center mt-5" id="discover"></div>
       </section>
 
       <footer class="d-flex align-items-center">
