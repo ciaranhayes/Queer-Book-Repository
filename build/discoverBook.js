@@ -35,3 +35,4 @@ function discoverBooks() {
     });
 }
 $(discoverBooks());
+$('#recommendationButton').click(discoverBooks);
