@@ -31,4 +31,8 @@ async function discoverBooks(): Promise<void>{
 
 $( discoverBooks() )
 
-$('#recommendationButton').click(discoverBooks);
+$('#recommendationButton').on('click', discoverBooks);
+
+$("#flip").click(function(){
+    $("#panel").slideToggle();
+});

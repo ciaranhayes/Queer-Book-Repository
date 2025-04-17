@@ -35,4 +35,7 @@ function discoverBooks() {
     });
 }
 $(discoverBooks());
-$('#recommendationButton').click(discoverBooks);
+$('#recommendationButton').on('click', discoverBooks);
+$("#flip").click(function () {
+    $("#panel").slideToggle();
+});
