@@ -7,11 +7,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(express.static('build', { 
     setHeaders: (res, path) => {
-      if (path.endsWith('.js')) {
+        if (path.endsWith('.js')) {
         res.set('Content-Type', 'application/javascript');
-      }
     }
-  }));
+    }
+}));
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
