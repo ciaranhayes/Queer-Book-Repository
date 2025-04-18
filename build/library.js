@@ -18,7 +18,7 @@ function fetchBooks() {
             const htmlFeaturedBook = `
         <div class="card mb-5" style="max-width:300px; min-width:200px">
             <div class="card-header">
-                <h2>${title}</h2>
+                <h2 class="bookTitle">${title}</h2>
                 <p style="font-style:italic;">${author}</p>
             </div>
             <div class="card-body">
