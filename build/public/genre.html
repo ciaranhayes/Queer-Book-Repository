@@ -49,14 +49,18 @@
       </nav>
 
       <section class="container-fluid my-5">
-        <h1>Genre Goes Here</h1>
-        <div class="dropdown">
-          <button id="toggleMenuGenre" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
-            Browse by Genre
-          </button>
-          <ul id="genreMenu" class="dropdown-menu"></ul>
+        <div class="shadow container w-7 discoverNewBook rounded-3">
+          <h1 class="ps-3 pt-3 p-md-5 discoverNewBook hero-text">Genre</h1>
+          <p class="ps-3 pe-3 ps-md-5 pb-3 pb-md-5 discoverNewBook hero-text">Find a genre that suits you </p>
         </div>
       </section>
+
+      <div class="dropdown d-flex justify-content-center vw-70 pb-5">
+        <button id="toggleMenuGenre" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+          Browse by Genre
+        </button>
+        <ul id="genreMenu" class="dropdown-menu"></ul>
+      </div>
 
       <section id="genres" class="flex">
         <div id="genre-hold" class="d-flex flex-column"></div>
