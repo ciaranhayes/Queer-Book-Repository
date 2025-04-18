@@ -37,11 +37,11 @@ li.nav-item {
     background-color: #7D7BB2;
 }
 
-.hero-text {
+.hero-text, .bookh2 {
     color:#FBFBFB
 }
 
-#featured-books, #discovered-books {
+#featured-books, #discovered-books, #library {
     background-color: #1F253F;
 }
 
@@ -50,7 +50,6 @@ li.nav-item {
     background-color: #FBFBFB;
     font-weight: 500;
     max-width: fit-content;
-    font-size: large;
 }
 
 footer {
@@ -92,4 +91,10 @@ footer {
 #recommendationButton {
     color:#1F253F;
     background-color:#FBFBFB;
+}
+
+.genre {
+    font-weight: bolder;
+    background-color:#7E5B6D;
+    color: #FBFBFB;
 }
