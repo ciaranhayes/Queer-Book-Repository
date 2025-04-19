@@ -71,69 +71,68 @@ app.post('/submit', (req, res) => __awaiter(void 0, void 0, void 0, function* ()
     }
     res.sendFile(path_1.default.join(__dirname, 'public', 'submit.html'));
 }));
-// app.put('/edit', async (req, res): Promise<void> => {
+// app.post('/edit', async (req, res): Promise<void> => {
 //     const { _id, title, author, description, genre, page } = req.body;
 //     const genresArray = Array.isArray(genre) ? genre : (genre ? [genre] : []);
 //     const url = `https://queer-books-api.onrender.com/books/edit/${_id}`
-//     const formBody = new URLSearchParams({
+//     console.log(url); 
+//     const formBodyEdit = new URLSearchParams({
 //         title,
 //         author,
 //         description,
 //         page
 //     });
 //     genresArray.forEach(genreItem => {
-//         formBody.append('genre', genreItem);
+//         formBodyEdit.append('genre', genreItem);
 //     });
 //     try {
-//         const apiResponse = await fetch(url, {
-//             method: 'PUT',
-//             headers: {
-//                 'Content-Type': 'application/x-www-form-urlencoded',
-//             },
-//             body: formBody.toString(),
-//         });
-//         const result = await apiResponse.json();
-//         console.log('API response:', result);
-//     } catch (error) {
-//         console.error('Error submitting to API:', error);
-//     }
-//     res.sendFile(path.join(__dirname, 'public', 'submit.html'));
+//     const apiResponse = await fetch(url, {
+//         method: 'PUT',
+//         headers: {
+//             'Content-Type': 'application/x-www-form-urlencoded',
+//         },
+//         body: formBodyEdit.toString(),
+//     });
+//     console.log('Response Status:', apiResponse.status);  // Log status code
+//     const responseBody = await apiResponse.text();  // Read body as text first
+//     console.log('Response Body:', responseBody);  // Log the body to check what you get
+//     const result = JSON.parse(responseBody);  // Now try parsing as JSON
+//     console.log('API response:', result);
+// } catch (error) {
+//     console.error('Error submitting to API:', error);
+// }
+//     res.sendFile(path.join(__dirname, 'public', 'edit.html'));
 // });
-app.put('/edit', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { _id, title, author, description, genre, page } = req.body; // _id is now in the body
-    // Check if genres is an array, otherwise make it an array with the genre
+app.post('/edit', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { _id, title, author, description, genre, page } = req.body;
+    // Log the incoming data to check if _id is being passed correctly
+    console.log('_id:', _id); // Check if _id is correctly received
     const genresArray = Array.isArray(genre) ? genre : (genre ? [genre] : []);
-    // The URL for the API to edit the book
     const url = `https://queer-books-api.onrender.com/books/edit/${_id}`;
-    // Prepare the form data to send as URLSearchParams
-    const formBody = new URLSearchParams({
+    const formBodyEdit = new URLSearchParams({
         title,
         author,
         description,
         page
     });
-    // Append genres as array items to the form body
     genresArray.forEach(genreItem => {
-        formBody.append('genre', genreItem);
+        formBodyEdit.append('genre', genreItem);
     });
     try {
-        // Make the PUT request to the external API to update the book
         const apiResponse = yield fetch(url, {
-            method: 'PUT', // Change method to PUT
+            method: 'PUT',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
             },
-            body: formBody.toString(),
+            body: formBodyEdit.toString(),
         });
-        const result = yield apiResponse.json(); // Parse the response JSON
+        const result = yield apiResponse.json();
         console.log('API response:', result);
-        // Send a success response to the client
-        res.json({ message: 'Book updated successfully', result });
     }
     catch (error) {
         console.error('Error submitting to API:', error);
-        res.status(500).json({ message: 'Error updating book', error });
     }
+    res.sendFile(path_1.default.join(__dirname, 'public', 'submit.html'));
 }));
 app.listen(port, () => {
     console.log(`Listening on port: http://localhost:${port}`);

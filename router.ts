@@ -72,14 +72,16 @@ app.post('/submit', async (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'submit.html'));
 });
 
-app.put('/edit', async (req, res): Promise<void> => {
+app.post('/edit', async (req, res): Promise<void> => {
     const { _id, title, author, description, genre, page } = req.body;
     
+    console.log('_id:', _id);
+
     const genresArray = Array.isArray(genre) ? genre : (genre ? [genre] : []);
 
-    const url = `https://queer-books-api.onrender.com/books/edit/${_id}`
+    const url = `https://queer-books-api.onrender.com/books/edit/${_id}`;
 
-    const formBody = new URLSearchParams({
+    const formBodyEdit = new URLSearchParams({
         title,
         author,
         description,
@@ -87,7 +89,7 @@ app.put('/edit', async (req, res): Promise<void> => {
     });
 
     genresArray.forEach(genreItem => {
-        formBody.append('genre', genreItem);
+        formBodyEdit.append('genre', genreItem);
     });
 
     try {
@@ -96,7 +98,7 @@ app.put('/edit', async (req, res): Promise<void> => {
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
             },
-            body: formBody.toString(),
+            body: formBodyEdit.toString(),
         });
 
         const result = await apiResponse.json();
@@ -107,6 +109,7 @@ app.put('/edit', async (req, res): Promise<void> => {
 
     res.sendFile(path.join(__dirname, 'public', 'submit.html'));
 });
+
 
 
 

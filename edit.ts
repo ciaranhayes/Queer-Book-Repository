@@ -1,5 +1,5 @@
 interface Book {
-    _id: any;
+    _id: string;
     title: string;
     author: string;
     genres: string[];
@@ -47,5 +47,5 @@ async function getBookToEdit(): Promise <void> {
     });
 }
 
-$( getBookToEdit )
+$( getBookToEdit );
 
