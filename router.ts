@@ -72,6 +72,10 @@ app.post('/submit', async (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'submit.html'));
 });
 
+app.post('/submit', async (req, res) => {
+    const { title, author, description, genre, page } = req.body;
+})
+
 app.listen(port, () => {
     console.log(`Listening on port: http://localhost:${port}`);
 });

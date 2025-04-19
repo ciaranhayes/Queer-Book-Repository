@@ -71,6 +71,9 @@ app.post('/submit', (req, res) => __awaiter(void 0, void 0, void 0, function* ()
     }
     res.sendFile(path_1.default.join(__dirname, 'public', 'submit.html'));
 }));
+app.post('/submit', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { title, author, description, genre, page } = req.body;
+}));
 app.listen(port, () => {
     console.log(`Listening on port: http://localhost:${port}`);
 });

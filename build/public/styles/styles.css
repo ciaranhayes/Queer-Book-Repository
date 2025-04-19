@@ -110,13 +110,15 @@ footer {
 .nav-link.active {
     background-color: #1F253F !important;
     color: #FBFBFB !important; 
+    border-color: #1F253F !important;
 }
 
 .nav-link:hover {
 background-color: #7D7BB2AA !important;
 color: #FBFBFB !important;
+border-color: #7D7BB2AA !important;
 }
 
-.nav-link {
+button.nav-link {
     color: #1F253F !important; 
 }
