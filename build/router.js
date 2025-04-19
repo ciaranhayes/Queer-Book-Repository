@@ -98,7 +98,7 @@ app.post('/edit', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     catch (error) {
         console.error('Error submitting to API:', error);
     }
-    res.sendFile(path_1.default.join(__dirname, 'public', 'submit.html'));
+    res.sendFile(path_1.default.join(__dirname, 'public', 'edit.html'));
 }));
 app.post('/delete', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { _id } = req.body;
@@ -110,12 +110,13 @@ app.post('/delete', (req, res) => __awaiter(void 0, void 0, void 0, function* ()
                 'Content-Type': 'application/x-www-form-urlencoded',
             }
         });
-        const result = yield apiResponse.json();
+        const result = yield apiResponse.text();
         console.log('API response:', result);
     }
     catch (error) {
         console.error('Error submitting to API:', error);
     }
+    res.sendFile(path_1.default.join(__dirname, 'public', 'delete.html'));
 }));
 app.listen(port, () => {
     console.log(`Listening on port: http://localhost:${port}`);

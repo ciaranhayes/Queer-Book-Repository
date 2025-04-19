@@ -9,6 +9,7 @@
     <script defer src="../contribute.js"></script>
     <script defer src="../search.js"></script>
     <script defer src="../edit.js"></script>
+    <script defer src="../delete.js"></script>
     <title>Queer Book Repository</title>
 </head>
 <body>
@@ -123,33 +124,15 @@
         <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
           <input class="filter-search input-group-lg rounded-3 d-block mx-auto p-1 mb-5 mw-50" type="text" placeholder="Search by Title...">
 
-          <form id="editInfoForm" method="POST" action="/edit" class="ms-3 me-3 ms-md-5 me-md-5">
+          <div class="container mt-4 mb-4 d-flex flex-row justify-content-around flex-wrap" id="searchToDelete"></div>
+
+          <form id="deleteSubmit" method="POST" action="/delete" class="ms-3 me-3 ms-md-5 me-md-5">
             <div class="mb-3 mt-3">
               <label for="id" class="form-label">ID:</label>
-              <input id="idToEdit" type="text" class="idToEdit form-control" name="_id">
+              <input id="idToDelete" type="text" class="idToEdit form-control" name="_id">
             </div>
-            <div class="mb-3 mt-3">
-              <label for="title" class="form-label">Title:</label>
-              <input type="text" class="form-control" placeholder="Enter Title" name="title">
-            </div>
-            <div class="mb-3 mt-3">
-              <label for="author" class="form-label">Author:</label>
-              <input type="text" class="form-control" placeholder="Enter Author" name="author">
-            </div>
-            <div class="mb-3 mt-3">
-              <label for="description" class="form-label">Description:</label>
-              <textarea type="text" class="form-control" rows="3" placeholder="Enter Description" name="description"></textarea>
-            </div>
-            <div class="mb-3 mt-3">
-              <label for="page" class="form-label">Page Count:</label>
-              <input type="text" class="form-control" rows="3" placeholder="Enter Page Number" name="page">
-            </div>
-            <label for="genre" class="form-label">Genres:</label>
-            <div id="editGenreCheckbox" class="genreCheckbox d-flex flex-row flex-wrap form-check"></div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-danger">Delete</button>
           </form>
-
-          <div class="container mt-4 mb-4 d-flex flex-row justify-content-around flex-wrap" id="searchToDelete"></div>
         </div>
       </div>
 

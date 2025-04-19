@@ -126,3 +126,7 @@ button.nav-link {
 #editSubmit {
     display: none;
 }
+
+#deleteSubmit {
+    display: none;
+}

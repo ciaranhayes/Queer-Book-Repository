@@ -105,7 +105,7 @@ app.post('/edit', async (req, res): Promise<void> => {
         console.error('Error submitting to API:', error);
     }
 
-    res.sendFile(path.join(__dirname, 'public', 'submit.html'));
+    res.sendFile(path.join(__dirname, 'public', 'edit.html'));
 });
 
 app.post('/delete', async (req, res) => {
@@ -120,12 +120,14 @@ app.post('/delete', async (req, res) => {
                 'Content-Type': 'application/x-www-form-urlencoded',
             }
         });
-
-        const result = await apiResponse.json();
+        
+        const result = await apiResponse.text();
         console.log('API response:', result);
     } catch (error) {
         console.error('Error submitting to API:', error);
     }
+
+    res.sendFile(path.join(__dirname, 'public', 'delete.html'));
 })
 
 
