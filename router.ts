@@ -72,9 +72,43 @@ app.post('/submit', async (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'submit.html'));
 });
 
-app.post('/submit', async (req, res) => {
-    const { title, author, description, genre, page } = req.body;
-})
+app.put('/edit', async (req, res): Promise<void> => {
+    const { _id, title, author, description, genre, page } = req.body;
+    
+    const genresArray = Array.isArray(genre) ? genre : (genre ? [genre] : []);
+
+    const url = `https://queer-books-api.onrender.com/books/edit/${_id}`
+
+    const formBody = new URLSearchParams({
+        title,
+        author,
+        description,
+        page
+    });
+
+    genresArray.forEach(genreItem => {
+        formBody.append('genre', genreItem);
+    });
+
+    try {
+        const apiResponse = await fetch(url, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: formBody.toString(),
+        });
+
+        const result = await apiResponse.json();
+        console.log('API response:', result);
+    } catch (error) {
+        console.error('Error submitting to API:', error);
+    }
+
+    res.sendFile(path.join(__dirname, 'public', 'submit.html'));
+});
+
+
 
 app.listen(port, () => {
     console.log(`Listening on port: http://localhost:${port}`);
