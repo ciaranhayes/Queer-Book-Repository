@@ -1,6 +1,7 @@
 import express from 'express';
 import path from 'path';
 import bodyParser from 'body-parser';
+import { submitBook, Book } from './submit.js';
 
 const app = express();
 const port: number = 3000;
@@ -38,7 +39,7 @@ app.get('/contribute', (req, res) => {
 app.post('/submit', async (req, res) => {
     const { title, author, description, genres, page } = req.body;
 
-    const url = 'https://queer-books-api.onrender.com/books/new'
+    const url = 'https://queer-books-api.onrender.com/books/new';
 
     const formBody = new URLSearchParams({
         title,
@@ -47,7 +48,22 @@ app.post('/submit', async (req, res) => {
         genres,
         page
     });
-    
+
+    try {
+        const apiResponse = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: formBody.toString(),
+        });
+
+        const result = await apiResponse.json();
+        console.log('API response:', result);
+    } catch (error) {
+        console.error('Error submitting to API:', error);
+    }
+
     console.log('Title:', title);
     console.log('Author:', author);
     console.log('Description:', description);
@@ -61,7 +77,4 @@ app.listen(port, () => {
     console.log(`Listening on port: http://localhost:${port}`);
 });
 
-
-
-console.log(path.join(__dirname, 'public'));
 
