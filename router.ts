@@ -1,12 +1,12 @@
 import express from 'express';
 import path from 'path';
 import bodyParser from 'body-parser';
-import { submitBook, Book } from './submit.js';
 
 const app = express();
 const port: number = 3000;
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: true }));
+express.urlencoded({ extended: true })
 
 app.use(express.static('build', { 
     setHeaders: (res, path) => {
@@ -37,7 +37,9 @@ app.get('/contribute', (req, res) => {
 });
 
 app.post('/submit', async (req, res) => {
-    const { title, author, description, genres, page } = req.body;
+    const { title, author, description, genre, page } = req.body;
+
+    const genresArray = Array.isArray(genre) ? genre : (genre ? [genre] : []);
 
     const url = 'https://queer-books-api.onrender.com/books/new';
 
@@ -45,8 +47,11 @@ app.post('/submit', async (req, res) => {
         title,
         author,
         description,
-        genres,
         page
+    });
+
+    genresArray.forEach(genreItem => {
+        formBody.append('genre', genreItem);
     });
 
     try {
@@ -64,14 +69,9 @@ app.post('/submit', async (req, res) => {
         console.error('Error submitting to API:', error);
     }
 
-    console.log('Title:', title);
-    console.log('Author:', author);
-    console.log('Description:', description);
-    console.log('Genres:', genres);
-    console.log('Page:', page);
-
     res.sendFile(path.join(__dirname, 'public', 'submit.html'));
 });
+
 
 app.listen(port, () => {
     console.log(`Listening on port: http://localhost:${port}`);

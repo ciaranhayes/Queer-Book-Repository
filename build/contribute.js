@@ -2,7 +2,7 @@
 function getGenreCheckbox(genre) {
     const htmlGenreCheckList = `
         <div class="p-3 form-check">
-            <input type="checkbox" class="form-check-input" name="genres" value="${genre}">
+            <input type="checkbox" class="form-check-input" name="genre" value="${genre}">
             <label class="form-check-label">${genre}</label>
         </div>
     `;
