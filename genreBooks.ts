@@ -48,26 +48,26 @@ async function getGenreBook(genre: string, section: string): Promise<void> {
     });
 }
 
-$( getGenreBook('Romance', 'romance') )
-$( getGenreBook('Coming of Age', 'coming-of-age') )
-$( getGenreBook('Literary Fiction', 'literary-fiction') )
-$( getGenreBook('Fantasy', 'fantasy') )
-$( getGenreBook('Young Adult', 'young-adult') )
-$( getGenreBook('Contemporary', 'contemporary') )
-$( getGenreBook('Adventure', 'adventure') )
-$( getGenreBook('Lesbian Fiction', 'lesbian-fiction') )
-$( getGenreBook('LGBTQIA+', 'lgbtqia') )
-$( getGenreBook('Historical Fiction','historical-fiction') )
-$( getGenreBook('Graphic Novel', 'graphic-novel') )
-$( getGenreBook('Memoir', 'memoir') )
-$( getGenreBook('Transgender', 'transgender') )
-$( getGenreBook('Non-fiction', 'non-fiction') )
-$( getGenreBook('Gothic Fiction', 'gothic-fiction') )
-$( getGenreBook('Philosophy', 'philosophy') )
-$( getGenreBook('Thriller', 'thriller') )
-$( getGenreBook('Mystery', 'mystery') )
-$( getGenreBook('Comedy', 'comedy') )
-$( getGenreBook('Poetry', 'poetry') )
-$( getGenreBook('Science Fiction', 'science-fiction') )
-$( getGenreBook('Horror', 'horror') )
+$( getGenreBook('Romance', 'romance') );
+$( getGenreBook('Coming of Age', 'coming-of-age') );
+$( getGenreBook('Literary Fiction', 'literary-fiction') );
+$( getGenreBook('Fantasy', 'fantasy') );
+$( getGenreBook('Young Adult', 'young-adult') );
+$( getGenreBook('Contemporary', 'contemporary') );
+$( getGenreBook('Adventure', 'adventure') );
+$( getGenreBook('Lesbian Fiction', 'lesbian-fiction') );
+$( getGenreBook('LGBTQIA+', 'lgbtqia') );
+$( getGenreBook('Historical Fiction','historical-fiction') );
+$( getGenreBook('Graphic Novel', 'graphic-novel') );
+$( getGenreBook('Memoir', 'memoir') );
+$( getGenreBook('Transgender', 'transgender') );
+$( getGenreBook('Non-fiction', 'non-fiction') );
+$( getGenreBook('Gothic Fiction', 'gothic-fiction') );
+$( getGenreBook('Philosophy', 'philosophy') );
+$( getGenreBook('Thriller', 'thriller') );
+$( getGenreBook('Mystery', 'mystery') );
+$( getGenreBook('Comedy', 'comedy') );
+$( getGenreBook('Poetry', 'poetry') );
+$( getGenreBook('Science Fiction', 'science-fiction') );
+$( getGenreBook('Horror', 'horror') );
 
