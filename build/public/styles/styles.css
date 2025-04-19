@@ -106,3 +106,17 @@ footer {
         color:#1F253F;
         opacity: 0.6;
     }
+
+.nav-link.active {
+    background-color: #1F253F !important;
+    color: #FBFBFB !important; 
+}
+
+.nav-link:hover {
+background-color: #7D7BB2AA !important;
+color: #FBFBFB !important;
+}
+
+.nav-link {
+    color: #1F253F !important; 
+}

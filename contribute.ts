@@ -5,7 +5,7 @@ function getGenreCheckbox(genre: string): void {
             <label class="form-check-label">${genre}</label>
         </div>
     `
-    $('#genreCheckbox').append(htmlGenreCheckList);
+    $('.genreCheckbox').append(htmlGenreCheckList);
 }
 
 getGenreCheckbox('Romance');
