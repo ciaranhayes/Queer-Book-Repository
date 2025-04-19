@@ -1,5 +1,5 @@
 $(function() {
-    $('#filter-search').on("keyup", function(){
+    $('.filter-search').on("keyup", function(){
         const rawVal = $(this).val()
         let searchTerm = (typeof rawVal === 'string' ? rawVal: '').toLowerCase();
 

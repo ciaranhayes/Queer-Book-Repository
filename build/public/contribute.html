@@ -51,29 +51,44 @@
         <h1>Make your contribution here!</h1>
       </section>
 
-      <section id="formSubmit" class="container-fluid ps-md-5 pe-md-5">
-        <form id="contributeForm" method="POST" action="/submit" class="ms-3 me-3 ms-md-5 me-md-5">
-          <div class="mb-3 mt-3">
-            <label for="title" class="form-label">Title:</label>
-            <input type="text" class="form-control" placeholder="Enter Title" name="title">
-          </div>
-          <div class="mb-3 mt-3">
-            <label for="author" class="form-label">Author:</label>
-            <input type="text" class="form-control" placeholder="Enter Author" name="author">
-          </div>
-          <div class="mb-3 mt-3">
-            <label for="description" class="form-label">Description:</label>
-            <textarea type="text" class="form-control" rows="3" placeholder="Enter Description" name="description"></textarea>
-          </div>
-          <div class="mb-3 mt-3">
-            <label for="page" class="form-label">Page Count:</label>
-            <input type="text" class="form-control" rows="3" placeholder="Enter Page Number" name="page">
-          </div>
-          <label for="genre" class="form-label">Genres:</label>
-          <div id="genreCheckbox" class="d-flex flex-row flex-wrap form-check"></div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+      <section>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Add Book</button>
+          <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Edit Book</button>
+          <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Delete Book</button>
+        </div>
       </section>
+      <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active p-3" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+          <section id="formSubmit" class="container-fluid ps-md-5 pe-md-5">
+            <form id="contributeForm" method="POST" action="/submit" class="ms-3 me-3 ms-md-5 me-md-5">
+              <div class="mb-3 mt-3">
+                <label for="title" class="form-label">Title:</label>
+                <input type="text" class="form-control" placeholder="Enter Title" name="title">
+              </div>
+              <div class="mb-3 mt-3">
+                <label for="author" class="form-label">Author:</label>
+                <input type="text" class="form-control" placeholder="Enter Author" name="author">
+              </div>
+              <div class="mb-3 mt-3">
+                <label for="description" class="form-label">Description:</label>
+                <textarea type="text" class="form-control" rows="3" placeholder="Enter Description" name="description"></textarea>
+              </div>
+              <div class="mb-3 mt-3">
+                <label for="page" class="form-label">Page Count:</label>
+                <input type="text" class="form-control" rows="3" placeholder="Enter Page Number" name="page">
+              </div>
+              <label for="genre" class="form-label">Genres:</label>
+              <div id="genreCheckbox" class="d-flex flex-row flex-wrap form-check"></div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </section>
+        </div>
+        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
+        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+      </div>
+
+      
 
       <footer class="d-flex align-items-center">
         <div class="container">

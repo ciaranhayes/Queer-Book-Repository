@@ -30,3 +30,20 @@ getGenreCheckbox('Comedy');
 getGenreCheckbox('Poetry');
 getGenreCheckbox('Science Fiction');
 getGenreCheckbox('Horror');
+$(() => {
+    $('#nav-home-tab').on('click', () => {
+        switchTab('home');
+    });
+    $('#nav-profile-tab').on('click', () => {
+        switchTab('profile');
+    });
+    $('#nav-contact-tab').on('click', () => {
+        switchTab('contact');
+    });
+    function switchTab(tab) {
+        $('.nav-link').removeClass('active');
+        $('.tab-pane').removeClass('show active');
+        $(`#nav-${tab}-tab`).addClass('active');
+        $(`#nav-${tab}`).addClass('show active');
+    }
+});
