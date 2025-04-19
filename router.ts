@@ -75,8 +75,6 @@ app.post('/submit', async (req, res) => {
 app.post('/edit', async (req, res): Promise<void> => {
     const { _id, title, author, description, genre, page } = req.body;
     
-    console.log('_id:', _id);
-
     const genresArray = Array.isArray(genre) ? genre : (genre ? [genre] : []);
 
     const url = `https://queer-books-api.onrender.com/books/edit/${_id}`;
