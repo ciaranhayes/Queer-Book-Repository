@@ -93,13 +93,13 @@ footer {
     background-color:#FBFBFB;
 }
 
-.genre {
+.genre, .books {
     font-weight: bolder;
     background-color:#7E5B6D;
-    color: #FBFBFB;
+    color: #FBFBFB !important;
 }
 
-#filter-search {
+#filter-search, #filterForDelete {
     border: 2px solid #1F253F;
 }
     ::placeholder {
@@ -123,10 +123,24 @@ button.nav-link {
     color: #1F253F !important; 
 }
 
-#editSubmit {
+#editSubmit, #deleteSubmit {
     display: none;
 }
 
-#deleteSubmit {
-    display: none;
+.btn-warning {
+    background-color: #e6a258 !important;
+    color:#FBFBFB !important;
+    border: none !important;
+}
+
+.btn-danger {
+    background-color:#f44336 !important;
+    color:#FBFBFB !important;
+    border: none !important;
+}
+
+.btn-primary {
+    background-color: #5d965a!important;
+    color: #FBFBFB !important;
+    border: none !important;
 }

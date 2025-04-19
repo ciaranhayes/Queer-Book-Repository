@@ -41,6 +41,7 @@ function getBookToDelete() {
             const bookId = $(this).data('id');
             $('#idToDelete').val(bookId);
             $('#deleteSubmit').slideToggle('slow');
+            alert('Warning! Deleting will remove this book from the database!');
         });
     });
 }

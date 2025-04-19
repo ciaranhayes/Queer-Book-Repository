@@ -50,8 +50,11 @@
         </div>
       </nav>
 
-      <section class="container-fluid">
-        <h1>Make your contribution here!</h1>
+      <section class="container-fluid my-5">
+        <div class="shadow container w-7 discoverNewBook rounded-3">
+          <h1 class="ps-3 pt-3 p-md-5 discoverNewBook hero-text">Contribution Page</h1>
+          <p class="ps-3 pe-3 ps-md-5 pb-3 pb-md-5 discoverNewBook hero-text">Make your mark and continue adding books to the ever growing library!</p>
+        </div>
       </section>
 
       <section>
@@ -121,17 +124,18 @@
             </form>
           </section>
         </div>
-        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-          <input class="filter-search input-group-lg rounded-3 d-block mx-auto p-1 mb-5 mw-50" type="text" placeholder="Search by Title...">
+        <div class="tab-pane fade p-3" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+          <input id="filterForDelete" class="filter-search input-group-lg rounded-3 d-block mx-auto p-1 mb-5 mw-50" type="text" placeholder="Search by Title...">
 
           <div class="container mt-4 mb-4 d-flex flex-row justify-content-around flex-wrap" id="searchToDelete"></div>
 
           <form id="deleteSubmit" method="POST" action="/delete" class="ms-3 me-3 ms-md-5 me-md-5">
             <div class="mb-3 mt-3">
-              <label for="id" class="form-label">ID:</label>
-              <input id="idToDelete" type="text" class="idToEdit form-control" name="_id">
+              <input id="idToDelete" type="hidden" class="idToEdit form-control" name="_id">
             </div>
-            <button type="submit" class="btn btn-danger">Delete</button>
+            <div class="d-flex justify-content-center pb-5">
+              <button type="submit" class="btn btn-danger">Complete Delete</button>
+            </div>
           </form>
         </div>
       </div>
