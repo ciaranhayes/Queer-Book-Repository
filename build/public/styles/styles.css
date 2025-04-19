@@ -122,3 +122,7 @@ border-color: #7D7BB2AA !important;
 button.nav-link {
     color: #1F253F !important; 
 }
+
+#editSubmit {
+    display: none;
+}

@@ -40,6 +40,7 @@ function getBookToEdit() {
         $('#searchToEdit').on('click', '.editButton', function () {
             const bookId = $(this).data('id');
             $('#idToEdit').val(bookId);
+            $('#editSubmit').slideToggle('slow');
         });
     });
 }

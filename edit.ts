@@ -43,9 +43,13 @@ async function getBookToEdit(): Promise <void> {
 
     $('#searchToEdit').on('click', '.editButton', function () {
         const bookId = $(this).data('id');
-        $('#idToEdit').val(bookId)
+        $('#idToEdit').val(bookId);
+        $('#editSubmit').slideToggle('slow');
     });
 }
 
 $( getBookToEdit );
+
+
+
 

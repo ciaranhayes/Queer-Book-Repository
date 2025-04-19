@@ -108,6 +108,25 @@ app.post('/edit', async (req, res): Promise<void> => {
     res.sendFile(path.join(__dirname, 'public', 'submit.html'));
 });
 
+app.post('/delete', async (req, res) => {
+    const { _id} = req.body;
+
+    const url = `https://queer-books-api.onrender.com/books/remove/${_id}`;
+
+    try {
+        const apiResponse = await fetch(url, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            }
+        });
+
+        const result = await apiResponse.json();
+        console.log('API response:', result);
+    } catch (error) {
+        console.error('Error submitting to API:', error);
+    }
+})
 
 
 

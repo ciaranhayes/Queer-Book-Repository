@@ -100,6 +100,23 @@ app.post('/edit', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     }
     res.sendFile(path_1.default.join(__dirname, 'public', 'submit.html'));
 }));
+app.post('/delete', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { _id } = req.body;
+    const url = `https://queer-books-api.onrender.com/books/remove/${_id}`;
+    try {
+        const apiResponse = yield fetch(url, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            }
+        });
+        const result = yield apiResponse.json();
+        console.log('API response:', result);
+    }
+    catch (error) {
+        console.error('Error submitting to API:', error);
+    }
+}));
 app.listen(port, () => {
     console.log(`Listening on port: http://localhost:${port}`);
 });
