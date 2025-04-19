@@ -1,7 +1,7 @@
 [build]
   publish = "public"
 
-  command = "npm run dev"
+  command = "npm run build"
 
 [[redirects]]
   from = "/styles/*"
