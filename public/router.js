@@ -17,7 +17,8 @@ const path_1 = __importDefault(require("path"));
 const body_parser_1 = __importDefault(require("body-parser"));
 const app = (0, express_1.default)();
 const port = 3000;
-app.use(express_1.default.static(path_1.default.join(__dirname, 'public')));
+const rootDir = process.cwd();
+app.use(express_1.default.static(path_1.default.join(rootDir, 'public')));
 app.use(body_parser_1.default.urlencoded({ extended: true }));
 express_1.default.urlencoded({ extended: true });
 app.use(express_1.default.static('build', {
@@ -28,19 +29,19 @@ app.use(express_1.default.static('build', {
     }
 }));
 app.get('/', (req, res) => {
-    res.sendFile(path_1.default.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path_1.default.join(rootDir, 'public', 'index.html'));
 });
 app.get('/discover', (req, res) => {
-    res.sendFile(path_1.default.join(__dirname, 'public', 'discover.html'));
+    res.sendFile(path_1.default.join(rootDir, 'public', 'discover.html'));
 });
 app.get('/genre', (req, res) => {
-    res.sendFile(path_1.default.join(__dirname, 'public', 'genre.html'));
+    res.sendFile(path_1.default.join(rootDir, 'public', 'genre.html'));
 });
 app.get('/library', (req, res) => {
-    res.sendFile(path_1.default.join(__dirname, 'public', 'library.html'));
+    res.sendFile(path_1.default.join(rootDir, 'public', 'library.html'));
 });
 app.get('/contribute', (req, res) => {
-    res.sendFile(path_1.default.join(__dirname, 'public', 'contribute.html'));
+    res.sendFile(path_1.default.join(rootDir, 'public', 'contribute.html'));
 });
 app.post('/submit', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { title, author, description, genre, page } = req.body;
@@ -69,8 +70,9 @@ app.post('/submit', (req, res) => __awaiter(void 0, void 0, void 0, function* ()
     catch (error) {
         console.error('Error submitting to API:', error);
     }
-    res.sendFile(path_1.default.join(__dirname, 'public', 'submit.html'));
+    res.sendFile(path_1.default.join(rootDir, 'public', 'submit.html'));
 }));
+console.log(__dirname);
 app.post('/edit', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { _id, title, author, description, genre, page } = req.body;
     const genresArray = Array.isArray(genre) ? genre : (genre ? [genre] : []);
@@ -98,7 +100,7 @@ app.post('/edit', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     catch (error) {
         console.error('Error submitting to API:', error);
     }
-    res.sendFile(path_1.default.join(__dirname, 'public', 'edit.html'));
+    res.sendFile(path_1.default.join(rootDir, 'public', 'edit.html'));
 }));
 app.post('/delete', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { _id } = req.body;
@@ -116,7 +118,7 @@ app.post('/delete', (req, res) => __awaiter(void 0, void 0, void 0, function* ()
     catch (error) {
         console.error('Error submitting to API:', error);
     }
-    res.sendFile(path_1.default.join(__dirname, 'public', 'delete.html'));
+    res.sendFile(path_1.default.join(rootDir, 'public', 'delete.html'));
 }));
 app.listen(port, () => {
     console.log(`Listening on port: http://localhost:${port}`);

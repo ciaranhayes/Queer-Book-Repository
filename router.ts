@@ -1,10 +1,13 @@
 import express from 'express';
 import path from 'path';
 import bodyParser from 'body-parser';
+import { fileURLToPath } from 'url';
 
 const app = express();
 const port: number = 3000;
-app.use(express.static(path.join(__dirname, 'public')));
+const rootDir = process.cwd();
+
+app.use(express.static(path.join(rootDir, 'public')));
 app.use(bodyParser.urlencoded({ extended: true }));
 express.urlencoded({ extended: true })
 
@@ -17,23 +20,23 @@ app.use(express.static('build', {
 }));
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.join(rootDir, 'public', 'index.html'));
 });
 
 app.get('/discover', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'discover.html'));
+    res.sendFile(path.join(rootDir, 'public', 'discover.html'));
 });
 
 app.get('/genre', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'genre.html'));
+    res.sendFile(path.join(rootDir, 'public', 'genre.html'));
 });
 
 app.get('/library', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'library.html'));
+    res.sendFile(path.join(rootDir, 'public', 'library.html'));
 });
 
 app.get('/contribute', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'contribute.html'));
+    res.sendFile(path.join(rootDir, 'public', 'contribute.html'));
 });
 
 app.post('/submit', async (req, res) => {
@@ -69,8 +72,10 @@ app.post('/submit', async (req, res) => {
         console.error('Error submitting to API:', error);
     }
 
-    res.sendFile(path.join(__dirname, 'public', 'submit.html'));
+    res.sendFile(path.join(rootDir, 'public', 'submit.html'));
 });
+
+console.log(__dirname);
 
 app.post('/edit', async (req, res): Promise<void> => {
     const { _id, title, author, description, genre, page } = req.body;
@@ -105,7 +110,7 @@ app.post('/edit', async (req, res): Promise<void> => {
         console.error('Error submitting to API:', error);
     }
 
-    res.sendFile(path.join(__dirname, 'public', 'edit.html'));
+    res.sendFile(path.join(rootDir, 'public', 'edit.html'));
 });
 
 app.post('/delete', async (req, res) => {
@@ -127,7 +132,7 @@ app.post('/delete', async (req, res) => {
         console.error('Error submitting to API:', error);
     }
 
-    res.sendFile(path.join(__dirname, 'public', 'delete.html'));
+    res.sendFile(path.join(rootDir, 'public', 'delete.html'));
 })
 
 
