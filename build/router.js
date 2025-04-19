@@ -44,17 +44,14 @@ app.get('/contribute', (req, res) => {
 });
 app.post('/submit', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { title, author, description, genre, page } = req.body;
-    // Ensure genre is an array, even if only one genre is selected
     const genresArray = Array.isArray(genre) ? genre : (genre ? [genre] : []);
     const url = 'https://queer-books-api.onrender.com/books/new';
-    // Create formBody and append genres
     const formBody = new URLSearchParams({
         title,
         author,
         description,
         page
     });
-    // Append each selected genre to the form body
     genresArray.forEach(genreItem => {
         formBody.append('genre', genreItem);
     });
@@ -72,12 +69,6 @@ app.post('/submit', (req, res) => __awaiter(void 0, void 0, void 0, function* ()
     catch (error) {
         console.error('Error submitting to API:', error);
     }
-    // Log submitted data
-    console.log('Title:', title);
-    console.log('Author:', author);
-    console.log('Description:', description);
-    console.log('Genres:', genresArray);
-    console.log('Page:', page);
     res.sendFile(path_1.default.join(__dirname, 'public', 'submit.html'));
 }));
 app.listen(port, () => {
