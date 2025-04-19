@@ -44,4 +44,4 @@ function getBookToEdit() {
         });
     });
 }
-$(getBookToEdit);
+$(getBookToEdit());

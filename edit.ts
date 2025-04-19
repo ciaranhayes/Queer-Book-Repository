@@ -48,7 +48,7 @@ async function getBookToEdit(): Promise <void> {
     });
 }
 
-$( getBookToEdit );
+$( getBookToEdit() );
 
 
 

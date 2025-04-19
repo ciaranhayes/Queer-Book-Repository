@@ -72,7 +72,6 @@ app.post('/submit', (req, res) => __awaiter(void 0, void 0, void 0, function* ()
     }
     res.sendFile(path_1.default.join(rootDir, 'public', 'submit.html'));
 }));
-console.log(__dirname);
 app.post('/edit', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { _id, title, author, description, genre, page } = req.body;
     const genresArray = Array.isArray(genre) ? genre : (genre ? [genre] : []);
@@ -120,6 +119,7 @@ app.post('/delete', (req, res) => __awaiter(void 0, void 0, void 0, function* ()
     }
     res.sendFile(path_1.default.join(rootDir, 'public', 'delete.html'));
 }));
+
 app.listen(port, () => {
     console.log(`Listening on port: http://localhost:${port}`);
 });

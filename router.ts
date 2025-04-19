@@ -75,8 +75,6 @@ app.post('/submit', async (req, res) => {
     res.sendFile(path.join(rootDir, 'public', 'submit.html'));
 });
 
-console.log(__dirname);
-
 app.post('/edit', async (req, res): Promise<void> => {
     const { _id, title, author, description, genre, page } = req.body;
     
