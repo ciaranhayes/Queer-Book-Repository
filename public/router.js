@@ -119,7 +119,6 @@ app.post('/delete', (req, res) => __awaiter(void 0, void 0, void 0, function* ()
     }
     res.sendFile(path_1.default.join(rootDir, 'public', 'delete.html'));
 }));
-
 app.listen(port, () => {
     console.log(`Listening on port: http://localhost:${port}`);
 });

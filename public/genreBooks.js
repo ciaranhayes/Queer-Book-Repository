@@ -14,7 +14,7 @@ function getGenreBook(genre, section) {
         const response = yield fetch(url);
         var data = yield response.json();
         const newSection = `<section id="${section}" class="container-fluid pt-2 pb-2 mb-5" style="background-color:#1F253F;"></section>`;
-        const htmlGenreTitle = `<h2 class="featured genre font-weight-bolder py-2 px-4 rounded-3 mt-3 mx-auto">${genre}</h2>`;
+        const htmlGenreTitle = `<h2 class="featured p-2 rounded-3 mt-3 mx-auto">${genre}</h2>`;
         const bookContainingDiv = `<div class="${section} container mt-4 mb-4 d-flex flex-row justify-content-around flex-wrap"></div>`;
         $('#genre-hold').append(newSection);
         $(`#${section}`).append(htmlGenreTitle);

@@ -50,6 +50,7 @@ li.nav-item {
     background-color: #FBFBFB;
     font-weight: 500;
     max-width: fit-content;
+    border: 3px solid #7D7BB2;
 }
 
 footer {
