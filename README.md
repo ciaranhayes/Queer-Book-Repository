@@ -33,3 +33,5 @@ npm run dev
 ```
 You should now be able to view the application by navigating to http://localhost:3000 in your browser.
 
+### Figma
+https://www.figma.com/design/SY1lo2AiYpnKbd7ob5uRkh/Queer-Book-Repository?fuid=1417430977514623542
