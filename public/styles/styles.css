@@ -145,3 +145,9 @@ button.nav-link {
     color: #FBFBFB !important;
     border: none !important;
 }
+
+.activeNav {
+    font-weight: bold;
+    background-color: #FBFBFB !important;
+    color: #7E5B6D !important;
+}
